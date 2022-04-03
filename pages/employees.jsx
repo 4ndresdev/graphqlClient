@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import styles from "../styles/modules/layout/Layout.module.css";
 
@@ -52,6 +52,7 @@ const Employees = () => {
       return (
         expresion.test(e.name) ||
         expresion.test(e.lastName) ||
+        expresion.test(e.name + " " + e.lastName) ||
         expresion.test(e.email) ||
         expresion.test(e.nationality) ||
         expresion.test(e.phone) ||
