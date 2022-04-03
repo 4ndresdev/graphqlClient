@@ -58,6 +58,11 @@ function Login() {
     onSubmit: async (values) => {
       const { user, password } = values;
 
+      setBtn({
+        mode: true,
+        msg: "Verifying...",
+      });
+
       try {
         const { data } = await authUser({
           variables: {
@@ -77,11 +82,6 @@ function Login() {
         const { token } = data.authUser;
 
         localStorage.setItem("token", token);
-
-        setBtn({
-          mode: true,
-          msg: "Verifying...",
-        });
 
         setTimeout(() => {
           router.push("dashboard");
